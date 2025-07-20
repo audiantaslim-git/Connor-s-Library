@@ -4,7 +4,7 @@ import axios from "axios";
 const app = express();
 const PORT = 3000;
 
-const myAPIKey = "AIzaSyCb6jNpPNgVDr0Cv9BKLxkpvkVtQoXl_wA";
+
 const API_URL = "https://www.googleapis.com/books/v1/volumes/";
 const libraryVolumeId = [
   {
