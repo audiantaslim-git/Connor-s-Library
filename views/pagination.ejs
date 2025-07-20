@@ -1,0 +1,24 @@
+<% 
+  const pageWindow = 5;
+  let startPage = Math.max(1, currentPage - Math.floor(pageWindow / 2));
+  let endPage = startPage + pageWindow - 1;
+
+  if (endPage > totalPages) {
+    endPage = totalPages;
+    startPage = Math.max(1, endPage - pageWindow + 1);
+  }
+%>
+
+<div class="flex justify-center space-x-2 mt-8">
+  <% if (currentPage > 1) { %>
+    <a href="/search?searchQuery=<%= query %>&page=<%= currentPage - 1 %>" class="px-4 py-2 border rounded text-gray-700 hover:bg-gray-100">Previous</a>
+  <% } %>
+
+  <% for (let i = startPage; i <= endPage; i++) { %>
+    <a href="/search?searchQuery=<%= query %>&page=<%= i %>" class="px-4 py-2 border rounded <%= i === currentPage ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-100' %>"><%= i %></a>
+  <% } %>
+
+  <% if (currentPage < totalPages) { %>
+    <a href="/search?searchQuery=<%= query %>&page=<%= currentPage + 1 %>" class="px-4 py-2 border rounded text-gray-700 hover:bg-gray-100">Next</a>
+  <% } %>
+</div>
