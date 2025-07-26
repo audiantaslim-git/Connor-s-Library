@@ -1,5 +1,12 @@
-<%- include ("header.ejs") %>
-<%- include ("recommendation.ejs") %>
+<%- include ("header.ejs", {
+        activePage: "home"
+})%>
+<%- include ("recommendation.ejs", {
+      content : content,
+      content1 : content1,
+      content2 : content2,
+      content3 : content3,
+}) %>
     
   </body>
 </html>

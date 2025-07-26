@@ -17,7 +17,9 @@
                 
             </div>
             <% }) %>
-            <%- include("pagination.ejs") %>
+            <%- include("pagination.ejs", {
+                currentPage : currentPage
+            }) %>
         </div>
         
     </div>
