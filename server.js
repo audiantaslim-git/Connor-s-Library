@@ -1,9 +1,11 @@
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 import axios from "axios";
 
 const app = express();
 const PORT = 4000;
-const myAPIKey = "AIzaSyCb6jNpPNgVDr0Cv9BKLxkpvkVtQoXl_wA";
+const myAPIKey = process.env.API_KEY;
 
 const bookShelves = ["fiction", "romance", "fantasy"];
 
